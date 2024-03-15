@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}Community{% endblock title %}
+
+{% block content %}
+{% include "nav.html" %}
+{% include "modal.html" %}
+
+<main class="container">
+<h1 class="display-1 text-center my-5">Community</h1>
+
+<div class="row g-3">
+  <aside class="col-12 col-lg-2">
+    <ul class="list-group">
+      <li class="list-group-item">Box Office</li>
+      <li class="list-group-item">Movies</li>
+      <li class="list-group-item">Genres</li>
+      <li class="list-group-item">Actors</li>
+    </ul>
+  </aside>
+
+  <article class="col-12 d-block d-lg-none">
+    <hr class='mt-0'>
+    <ol class="list-group list-group-flush">
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <p>Best Movie Ever</p>
+          <p>Greate Movie Title</p>
+          <p>1 minutes ago</p>
+        </div>
+        <span class="badge text-bg-light rounded-pill">user</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <p>Movie Test</p>
+          <p>Greate Movie TItle</p>
+          <p>1 minutes ago</p>
+        </div>
+        <span class="badge text-bg-light rounded-pill">user</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <p>Movie Ever</p>
+          <p>Greate Movie Title</p>
+          <p>1 minutes ago</p>
+        </div>
+        <span class="badge text-bg-light rounded-pill">user</span>
+      </li>
+    </ol>
+  </article>
+
+  <article class="col-10 d-none d-lg-block">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">영화 제목</th>
+          <th scope="col">글 제목</th>
+          <th scope="col">작성자</th>
+          <th scope="col">작성 시간</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row">Great Movie title</td>
+          <td>Best Movie Ever</td>
+          <td>user</td>
+          <td>1 minutes ago</td>
+        </tr>
+        <tr>
+          <td scope="row">Movie Test</td>
+          <td>Best Movie Ever</td>
+          <td>user</td>
+          <td>1 minutes ago</td>
+        </tr>
+        <tr>
+          <td scope="row">Movie Test</td>
+          <td>Best Movie Ever</td>
+          <td>user</td>
+          <td>1 minutes ago</td>
+        </tr>
+        <tr>
+          <td scope="row">Movie Test</td>
+          <td>Best Movie Ever</td>
+          <td>user</td>
+          <td>1 minutes ago</td>
+        </tr>
+        <tr>
+          <td scope="row">Movie Test</td>
+          <td>Best Movie Ever</td>
+          <td>user</td>
+          <td>1 minutes ago</td>
+        </tr>
+        <tr>
+          <td scope="row">Movie Test</td>
+          <td>Best Movie Ever</td>
+          <td>user</td>
+          <td>1 minutes ago</td>
+        </tr>
+        <tr>
+          <td scope="row">Movie Test</td>
+          <td>Best Movie Ever</td>
+          <td>user</td>
+          <td>1 minutes ago</td>
+        </tr>
+        <tr>
+          <td scope="row">Movie Test</td>
+          <td>Best Movie Ever</td>
+          <td>user</td>
+          <td>1 minutes ago</td>
+        </tr>
+        <tr>
+          <td scope="row">Movie Test</td>
+          <td>Best Movie Ever</td>
+          <td>user</td>
+          <td>1 minutes ago</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+  
+  <nav class="d-flex justify-content-center text-align-center">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+</main>
+{% endblock content %}
