@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ movie.title }}
+{% endblock title %}
+
+{% block content %}
+<h1>DETAIL PAGE</h1>
+{% if movie.image %}
+<img src="{{ movie.image.url }}" alt="" style="width: 40%;">
+{% endif %}
+
+<h3>{{ movie.title }}</h3>
+<p>{{ movie.description }}</p>
+<hr>
+<h4>댓글 등록</h4>
+<form action="{% url "movies:create_comment" movie.pk %}" method="POST">
+    {% csrf_token %}
+    {{ comment_form.as_p}}
+    <input type="submit" value="등록">
+</form>
+<hr>
+<h4>댓글 목록</h4>
+<ul>
+    {% for comment in comments %}
+        <li>{{ comment.user }} : {{ comment.content }}</li>
+        {% if request.user == comment.user %}
+            <form action="{% url "movies:delete_comment" movie.pk comment.pk %}" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="삭제">
+            </form>
+        {% endif %}
+    {% endfor %}
+</ul>
+<hr>
+<a href="{% url "movies:update" movie.pk %}" class="btn btn-secondary">UPDATE</a>
+<form action="{% url "movies:delete" movie.pk %}" method="POST" class="d-inline-block">
+    {% csrf_token %}
+    <input type="submit" value="DELETE" class="btn btn-danger">
+</form>
+<hr>
+<a href="{% url "movies:index" %}" class="btn btn-primary">BACK</a>
+{% endblock content %}

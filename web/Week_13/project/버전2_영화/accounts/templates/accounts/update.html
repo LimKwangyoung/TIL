@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Update {{ request.user }}
+{% endblock title %}
+
+{% block style %}
+    #id_password, .helptext, form>p:nth-child(6) {
+        display: none;
+    }
+{% endblock style %}
+
+{% block content %}
+<h1>UPDATE PAGE</h1>
+<hr>
+<form action="{% url "accounts:update" %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="수정">
+</form>
+<hr>
+<form action="{% url "accounts:delete" %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="회원탈퇴">
+</form>
+<form action="{% url "change_password" request.user.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="비밀번호 변경">
+</form>
+{% endblock content %}
